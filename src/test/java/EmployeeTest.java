@@ -48,4 +48,10 @@ public class EmployeeTest {
         testObject.setAge(29);
         assertEquals(29, testObject.getAge(), "Should result in '29'");
     }
+
+    @Test
+    @DisplayName("Test employee ID")
+    void testEmployeeID() {
+        assertEquals(1, testObject.getID(), "Should result in '1'");
+    }
 }
