@@ -3,12 +3,14 @@ public class Employee {
     private String firstName;
     private String lastName;
     private int age;
+    private static int employeeID;
 
     public Employee(String firstName, String lastName, int age, int salary) {
 
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+        employeeID += 1;
     }
 
     public String getFirstName() {
@@ -33,5 +35,9 @@ public class Employee {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public int getID() {
+        return employeeID;
     }
 }
