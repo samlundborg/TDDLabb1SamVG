@@ -11,9 +11,15 @@ public class EmployeeTest {
     }
 
     @Test
-    @DisplayName("Test employee")
-    void testFirstName() {
+    @DisplayName("Test employee first name")
+    void testGetFirstName() {
         assertEquals("Vincent", testObject.getFirstName(), "Should result in 'Vincent'");
     }
 
+    @Test
+    @DisplayName("Test employee set first name")
+    void testSetFirstName() {
+        testObject.setFirstName("Vince");
+        assertEquals("Vince", testObject.getFirstName(), "Should result in 'Vince'");
+    }
 }
