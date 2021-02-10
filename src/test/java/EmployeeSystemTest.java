@@ -22,7 +22,7 @@ public class EmployeeSystemTest {
     @Test
     @DisplayName("Yeeeey")
     void addEmployeeToList() {
-    testObject.addEmployeeToList();
+        testObject.addEmployeeToList(testPersonal);
     }
 }
 
