@@ -1,4 +1,6 @@
 import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
+
 public class EmployeeTest {
     Employee testObject;
     //TODO Change to constructor-chaining with standard values(?)
@@ -11,7 +13,7 @@ public class EmployeeTest {
     @Test
     @DisplayName("Test employee")
     void testFirstName() {
-        Assertions.assertEquals("Vincent", testObject.getFirstName());
+        assertEquals("Vincent", testObject.getFirstName(), "Should result in 'Vincent'");
     }
 
 }
