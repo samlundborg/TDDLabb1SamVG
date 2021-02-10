@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 
@@ -9,7 +10,7 @@ public class EmployeeSystemTest {
     @BeforeEach
     void initMethod() {
         testObject = new EmployeeSystem();
-        testPersonal = new Employee("Adam", "Ballard", 26, 45000);
+        testPersonal = new Employee("Vince", "Adler", 28, 55000);
     }
 
 
@@ -23,7 +24,9 @@ public class EmployeeSystemTest {
     @DisplayName("Yeeeey")
     void addEmployeeToList() {
         testObject.addEmployeeToList(testPersonal);
+        assertEquals(testPersonal, testObject.getEmployee(1));
     }
+    //TODO Create a test to check that a specific employee was added to the list.
 }
 
 
