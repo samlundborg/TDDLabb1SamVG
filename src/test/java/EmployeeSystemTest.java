@@ -17,6 +17,13 @@ public class EmployeeSystemTest {
     @DisplayName("Yeeeey")
     void testForCreatingEmployeeSystem() {
 
+    }
 
+    @Test
+    @DisplayName("Yeeeey")
+    void addEmployeeToList() {
+    testObject.addEmployeeToList();
     }
 }
+
+
