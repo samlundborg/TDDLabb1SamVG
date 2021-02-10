@@ -22,4 +22,10 @@ public class EmployeeTest {
         testObject.setFirstName("Vince");
         assertEquals("Vince", testObject.getFirstName(), "Should result in 'Vince'");
     }
+
+    @Test
+    @DisplayName("Test employee last name")
+    void testGetLastName() {
+        assertEquals("Adler", testObject.getLastName(), "Should result in 'Adler'");
+    }
 }
