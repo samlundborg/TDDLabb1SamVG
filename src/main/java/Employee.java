@@ -3,6 +3,7 @@ public class Employee {
     private String firstName;
     private String lastName;
     private int age;
+    private int salary;
     private static int employeeID;
 
     public Employee(String firstName, String lastName, int age, int salary) {
@@ -10,6 +11,7 @@ public class Employee {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+        this.salary = salary;
         employeeID += 1;
     }
 
@@ -39,5 +41,9 @@ public class Employee {
 
     public int getID() {
         return employeeID;
+    }
+
+    public int getSalary() {
+        return salary;
     }
 }

@@ -54,4 +54,11 @@ public class EmployeeTest {
     void testEmployeeID() {
         assertEquals(1, testObject.getID(), "Should result in '1'");
     }
+    //TODO See if ID automatically increments with every new Employee created
+
+    @Test
+    @DisplayName("Test employee get salary")
+    void testGetSalary() {
+        assertEquals(55000, testObject.getSalary(), "Should result in '55000'");
+    }
 }
