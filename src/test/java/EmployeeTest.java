@@ -28,4 +28,11 @@ public class EmployeeTest {
     void testGetLastName() {
         assertEquals("Adler", testObject.getLastName(), "Should result in 'Adler'");
     }
+
+    @Test
+    @DisplayName("Test employee set last name")
+    void testSetLastName() {
+        testObject.setLastName("Adde");
+        assertEquals("Adde", testObject.getLastName(), "Should result in 'Adde'");
+    }
 }
