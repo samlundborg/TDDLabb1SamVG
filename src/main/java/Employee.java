@@ -3,10 +3,10 @@ public class Employee {
     private String firstName;
     private String lastName;
     private int age;
-    private int salary;
+    private double salary;
     private static int employeeID;
 
-    public Employee(String firstName, String lastName, int age, int salary) {
+    public Employee(String firstName, String lastName, int age, double salary) {
 
         this.firstName = firstName;
         this.lastName = lastName;
@@ -43,11 +43,11 @@ public class Employee {
         return employeeID;
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
 }
