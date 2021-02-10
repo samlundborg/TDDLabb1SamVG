@@ -61,4 +61,11 @@ public class EmployeeTest {
     void testGetSalary() {
         assertEquals(55000, testObject.getSalary(), "Should result in '55000'");
     }
+
+    @Test
+    @DisplayName("Test employee set salary")
+    void testSetSalary() {
+        testObject.setSalary(60000);
+        assertEquals(60000, testObject.getSalary(), "Should result in '60000'");
+    }
 }
