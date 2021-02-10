@@ -1,10 +1,12 @@
 public class Employee {
 
     private String firstName;
+    private String lastName;
 
     public Employee(String firstName, String lastName, int age, int salary) {
 
         this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public String getFirstName() {
@@ -13,5 +15,9 @@ public class Employee {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 }
