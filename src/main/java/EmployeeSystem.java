@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class EmployeeSystem {
 
-    ArrayList<Employee> EmployeeList = new ArrayList<Employee>();
+    ArrayList<Employee> EmployeeList = new ArrayList<>();
 
 
     public void addEmployeeToList(Employee employee) {
@@ -19,13 +19,12 @@ public class EmployeeSystem {
     }
 
     public void removeEmployeeToList(int employeeID) {
-
-            for (Employee employee : EmployeeList) {
-                if (employee.getID() == employeeID) {
-                    EmployeeList.remove(employeeID);
-                }
+        for (Employee employee : EmployeeList) {
+            if (employee.getID() == employeeID) {
+                EmployeeList.remove(employeeID);
             }
         }
+    }
 
     }
 

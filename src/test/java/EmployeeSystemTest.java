@@ -25,6 +25,7 @@ public class EmployeeSystemTest {
     void addEmployeeToList() {
         testObject.addEmployeeToList(testPersonal);
         assertEquals(testPersonal, testObject.getEmployee(1));
+        
     }
     // If you want to test that a specific employee was added to ArrayList you need to use Dictionaries.
 
