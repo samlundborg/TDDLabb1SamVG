@@ -32,8 +32,8 @@ public class EmployeeSystemTest {
     @Test
     @DisplayName("Yeeeey")
     void removeEmployeeToList() {
-        testObject.removeEmployeeToList(testPersonal);
-        assertEquals(null, testObject.getEmployee(1));
+        testObject.removeEmployeeToList(testPersonal.getID());
+        assertNull(testObject.getEmployee(testPersonal.getID()));
     }
 
 }

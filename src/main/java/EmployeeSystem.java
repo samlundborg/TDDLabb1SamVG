@@ -18,4 +18,14 @@ public class EmployeeSystem {
         return null;
     }
 
-}
+    public void removeEmployeeToList(int employeeID) {
+
+            for (Employee employee : EmployeeList) {
+                if (employee.getID() == employeeID) {
+                    EmployeeList.remove(employeeID);
+                }
+            }
+        }
+
+    }
+
