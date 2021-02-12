@@ -1,9 +1,13 @@
 import org.junit.jupiter.api.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
+import static sun.nio.cs.Surrogate.is;
+import static org.junit.matchers.JUnitMatchers.*;
+
 
 public class EmployeeTest {
     Employee testObject;
-    //TODO Change to constructor-chaining with standard values(?)
+    Employee testObjectSam;
 
     @BeforeEach
     void initMethod() {
@@ -20,6 +24,7 @@ public class EmployeeTest {
     @DisplayName("Test employee set first name")
     void testSetFirstName() {
         testObject.setFirstName("Vince");
+        System.out.println(testObject.getID());
         assertEquals("Vince", testObject.getFirstName(), "Should result in 'Vince'");
     }
 
@@ -52,9 +57,18 @@ public class EmployeeTest {
     @Test
     @DisplayName("Test employee ID")
     void testEmployeeID() {
-        assertEquals(1, testObject.getID(), "Should result in '1'");
+
+      // assertTrue(testObject.getID() instanceof Integer.TYPE);
+        assertTrue(Integer.class.isInstance(testObject.getID())); // Integer klassen besitter metoden isInstance().
     }
-    //TODO See if ID automatically increments with every new Employee created
+
+    @RepeatedTest(10)
+    @DisplayName("Test unique employee ID")
+    void testUniqueEmployeeID() {
+        testObjectSam = new Employee("Samuela", "Lundborg", 23, 65000);
+        assertFalse(testObjectSam.getID() == testObject.getID());
+    }
+
 
     @Test
     @DisplayName("Test employee get salary")
@@ -67,5 +81,20 @@ public class EmployeeTest {
     void testSetSalary() {
         testObject.setSalary(60000);
         assertEquals(60000, testObject.getSalary(), "Should result in '60000'");
+    }
+    @Test
+    @DisplayName("consTest")
+    void testConstructor(){
+        testGetSalary();
+        testGetAge();
+        testGetFirstName();
+        testGetLastName();
+    }
+
+
+    @Test
+    @DisplayName("ToString Test")
+    void testToString(){
+        assertEquals("{ Name:Vincent Adler Age: 28 EmployeeID: 1 Salary: 55000.0 }",testObject.toString());
     }
 }

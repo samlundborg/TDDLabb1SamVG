@@ -26,7 +26,7 @@ public class EmployeeSystemTest {
         testObject.addEmployeeToList(testPersonal);
         assertEquals(testPersonal, testObject.getEmployee(1));
     }
-    //TODO Create a test to check that a specific employee was added to the list.
+    // If you want to test that a specific employee was added to ArrayList you need to use Dictionaries.
 
 
     @Test
@@ -35,6 +35,8 @@ public class EmployeeSystemTest {
         testObject.removeEmployeeToList(testPersonal.getID());
         assertNull(testObject.getEmployee(testPersonal.getID()));
     }
+
+
 
 }
 

@@ -5,6 +5,8 @@ public class Employee {
     private int age;
     private double salary;
     private static int employeeID;
+    private int employeeRealID;
+
 
     public Employee(String firstName, String lastName, int age, double salary) {
 
@@ -13,6 +15,7 @@ public class Employee {
         this.age = age;
         this.salary = salary;
         employeeID += 1;
+        employeeRealID = employeeID;
     }
 
     public String getFirstName() {
@@ -40,7 +43,7 @@ public class Employee {
     }
 
     public int getID() {
-        return employeeID;
+        return employeeRealID;
     }
 
     public double getSalary() {
@@ -51,5 +54,7 @@ public class Employee {
         this.salary = salary;
     }
 
-    //TODO toString metod
+    public String toString(){
+        return "{ " + "Name:" + firstName+ " " + lastName + " Age: " + age + " EmployeeID: " + employeeRealID + " Salary: " + salary + " }";
+    }
 }
