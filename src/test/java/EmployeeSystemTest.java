@@ -27,6 +27,15 @@ public class EmployeeSystemTest {
         assertEquals(testPersonal, testObject.getEmployee(1));
     }
     //TODO Create a test to check that a specific employee was added to the list.
+
+
+    @Test
+    @DisplayName("Yeeeey")
+    void removeEmployeeToList() {
+        testObject.removeEmployeeToList(testPersonal);
+        assertEquals(null, testObject.getEmployee(1));
+    }
+
 }
 
 
