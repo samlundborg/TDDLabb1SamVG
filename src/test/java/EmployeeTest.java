@@ -57,8 +57,6 @@ public class EmployeeTest {
     @Test
     @DisplayName("Test employee ID")
     void testEmployeeID() {
-
-      // assertTrue(testObject.getID() instanceof Integer.TYPE);
         assertTrue(Integer.class.isInstance(testObject.getID())); // Integer klassen besitter metoden isInstance().
     }
 
@@ -68,7 +66,6 @@ public class EmployeeTest {
         testObjectSam = new Employee("Samuela", "Lundborg", 23, 65000);
         assertFalse(testObjectSam.getID() == testObject.getID());
     }
-
 
     @Test
     @DisplayName("Test employee get salary")
@@ -82,6 +79,7 @@ public class EmployeeTest {
         testObject.setSalary(60000);
         assertEquals(60000, testObject.getSalary(), "Should result in '60000'");
     }
+
     @Test
     @DisplayName("consTest")
     void testConstructor(){
@@ -91,10 +89,10 @@ public class EmployeeTest {
         testGetLastName();
     }
 
-
     @Test
     @DisplayName("ToString Test")
     void testToString(){
-        assertEquals("{ Name:Vincent Adler Age: 28 EmployeeID: 1 Salary: 55000.0 }",testObject.toString());
-    }
+        assertEquals("Employee{firstName='Vincent', lastName='Adler', age= 28, salary= 55000.0, employeeRealID= 8}",testObject.toString());
+    } //ID must be 8 when all tests are executed. 1 when isolated.
+
 }

@@ -5,40 +5,34 @@ import java.util.ArrayList;
 
 public class EmployeeSystemTest {
     EmployeeSystem testObject;
-    Employee testPersonal;
+    Employee testPersonal, testPersonal2, testPersonal3;
 
     @BeforeEach
     void initMethod() {
         testObject = new EmployeeSystem();
         testPersonal = new Employee("Vince", "Adler", 28, 55000);
-    }
-
-
-    @Test
-    @DisplayName("Yeeeey")
-    void testForCreatingEmployeeSystem() {
-
+        testPersonal2 = new Employee("Anton", "Danieli", 31, 55000);
+        testPersonal3 = new Employee("Sammie", "Lundborg", 23, 55000);
     }
 
     @Test
-    @DisplayName("Yeeeey")
-    void addEmployeeToList() {
+    @DisplayName("Tests the method to add an employee")
+    void testAddEmployeeToList() {
         testObject.addEmployeeToList(testPersonal);
-        assertEquals(testPersonal, testObject.getEmployee(1));
-        
+        assertEquals(testPersonal, testObject.getEmployee(testPersonal.getID()));
     }
-    // If you want to test that a specific employee was added to ArrayList you need to use Dictionaries.
-
 
     @Test
-    @DisplayName("Yeeeey")
-    void removeEmployeeToList() {
-        testObject.removeEmployeeToList(testPersonal.getID());
+    @DisplayName("Tests the method to remove an employee")
+    void testRemoveEmployeeFromList() {
+        testObject.addEmployeeToList(testPersonal);
+        testObject.addEmployeeToList(testPersonal2);
+        testObject.addEmployeeToList(testPersonal3);
+
+        testObject.removeEmployeeFromList(testPersonal.getID());
         assertNull(testObject.getEmployee(testPersonal.getID()));
     }
 
 
 
 }
-
-

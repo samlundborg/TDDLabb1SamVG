@@ -54,7 +54,14 @@ public class Employee {
         this.salary = salary;
     }
 
-    public String toString(){
-        return "{ " + "Name:" + firstName+ " " + lastName + " Age: " + age + " EmployeeID: " + employeeRealID + " Salary: " + salary + " }";
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age= " + age +
+                ", salary= " + salary +
+                ", employeeRealID= " + employeeRealID +
+                '}';
     }
 }
