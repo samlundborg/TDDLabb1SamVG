@@ -37,8 +37,9 @@ public class EmployeeSystemTest {
     @DisplayName("Tests the method to give specific employee a raise")
     void testGiveRaise() {
         testObject.addEmployeeToList(testPersonal);
-        double test = testObject.getEmployee(1).getSalary();
-        testObject.giveRaiseToEmployee(1,50);
+        double test = testObject.getEmployee(testPersonal.getID()).getSalary();
+        testObject.giveRaiseToEmployee(testPersonal.getID(),50);
+        assertEquals(test * 1.5, testObject.getEmployee(testPersonal.getID()).getSalary());
     }
 
 }

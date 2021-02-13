@@ -100,7 +100,7 @@ public class EmployeeTest {
     @Test
     @DisplayName("ToString Test")
     void testToString(){
-        assertEquals("Employee{firstName='Vincent', lastName='Adler', age= 28, salary= 55000.0, employeeRealID= 8}",testObject.toString());
-    } //ID must be 8 when all tests are executed. 1 when isolated.
+        assertEquals("Employee{firstName='Vincent', lastName='Adler', age= 28, salary= 55000.0, employeeRealID= " + testObject.getID() + "}",testObject.toString());
+    }
 
 }
