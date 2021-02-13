@@ -94,7 +94,6 @@ public class EmployeeTest {
     void testGiveRaise() {
         double test = testObject.getSalary();
         testObject.giveRaise(50); //Raise for 50%
-        System.out.println(testObject.getSalary());
         assertEquals(test * 1.5,testObject.getSalary());
     }
 
