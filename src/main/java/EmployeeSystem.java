@@ -25,4 +25,11 @@ public class EmployeeSystem {
         }
     }
 
+    public void giveRaiseToEmployee(int employeeID, int percentRaise) {
+        for (int i = 0; i < EmployeeList.size(); i++) {
+            if (EmployeeList.get(i).getID() == employeeID) {
+                EmployeeList.get(i).giveRaise(percentRaise);
+            }
+        }
+    }
 }
