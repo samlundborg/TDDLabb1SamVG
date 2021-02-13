@@ -1,9 +1,5 @@
 import org.junit.jupiter.api.*;
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
-import static sun.nio.cs.Surrogate.is;
-import static org.junit.matchers.JUnitMatchers.*;
-
 
 public class EmployeeTest {
     Employee testObject;
@@ -15,13 +11,13 @@ public class EmployeeTest {
     }
 
     @Test
-    @DisplayName("Test employee first name")
+    @DisplayName("Tests employee first name")
     void testGetFirstName() {
         assertEquals("Vincent", testObject.getFirstName(), "Should result in 'Vincent'");
     }
 
     @Test
-    @DisplayName("Test employee set first name")
+    @DisplayName("Tests employee set first name")
     void testSetFirstName() {
         testObject.setFirstName("Vince");
         System.out.println(testObject.getID());
@@ -29,59 +25,59 @@ public class EmployeeTest {
     }
 
     @Test
-    @DisplayName("Test employee last name")
+    @DisplayName("Tests employee last name")
     void testGetLastName() {
         assertEquals("Adler", testObject.getLastName(), "Should result in 'Adler'");
     }
 
     @Test
-    @DisplayName("Test employee set last name")
+    @DisplayName("Tests employee set last name")
     void testSetLastName() {
         testObject.setLastName("Adde");
         assertEquals("Adde", testObject.getLastName(), "Should result in 'Adde'");
     }
 
     @Test
-    @DisplayName("Test employee age")
+    @DisplayName("Tests employee age")
     void testGetAge() {
         assertEquals(28, testObject.getAge(), "Should result in '28'");
     }
 
     @Test
-    @DisplayName("Test set employee age")
+    @DisplayName("Tests set employee age")
     void testSetAge() {
         testObject.setAge(29);
         assertEquals(29, testObject.getAge(), "Should result in '29'");
     }
 
     @Test
-    @DisplayName("Test employee ID")
+    @DisplayName("Tests employee ID")
     void testEmployeeID() {
         assertTrue(Integer.class.isInstance(testObject.getID())); // Integer klassen besitter metoden isInstance().
     }
 
     @RepeatedTest(10)
-    @DisplayName("Test unique employee ID")
+    @DisplayName("Tests unique employee ID")
     void testUniqueEmployeeID() {
         testObjectSam = new Employee("Samuela", "Lundborg", 23, 65000);
         assertNotEquals(testObject.getID(), testObjectSam.getID());
     }
 
     @Test
-    @DisplayName("Test employee get salary")
+    @DisplayName("Tests employee get salary")
     void testGetSalary() {
         assertEquals(55000, testObject.getSalary(), "Should result in '55000'");
     }
 
     @Test
-    @DisplayName("Test employee set salary")
+    @DisplayName("Tests employee set salary")
     void testSetSalary() {
         testObject.setSalary(60000);
         assertEquals(60000, testObject.getSalary(), "Should result in '60000'");
     }
 
     @Test
-    @DisplayName("consTest")
+    @DisplayName("Tests that the constructor set the values")
     void testConstructor(){
         testGetSalary();
         testGetAge();
@@ -90,15 +86,23 @@ public class EmployeeTest {
     }
 
     @Test
-    @DisplayName("Test giving raise to Employee")
+    @DisplayName("Tests giving raise to Employee")
     void testGiveRaise() {
         double test = testObject.getSalary();
         testObject.giveRaise(50); //Raise for 50%
-        assertEquals(test * 1.5,testObject.getSalary());
+        assertEquals(test * 1.5,testObject.getSalary(),"The salary should change to 82500");
     }
 
     @Test
-    @DisplayName("ToString Test")
+    @DisplayName("Tests giving a wrongly raise to Employee")
+    void testGiveWrongRaise() {
+        double test = testObject.getSalary();
+        testObject.giveRaise(-50);
+        assertEquals(test,testObject.getSalary(), "Nothing should change with the salary.");
+    }
+
+    @Test
+    @DisplayName("Tests the ToString()")
     void testToString(){
         assertEquals("Employee{firstName='Vincent', lastName='Adler', age= 28, salary= 55000.0, employeeRealID= " + testObject.getID() + "}",testObject.toString());
     }

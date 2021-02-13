@@ -7,9 +7,7 @@ public class Employee {
     private static int employeeID;
     private int employeeRealID;
 
-
     public Employee(String firstName, String lastName, int age, double salary) {
-
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -58,6 +56,9 @@ public class Employee {
         if (percentRaise > 0 && percentRaise < 100) {
             double x = percentRaise/100;
             salary = salary * (1+x);
+        }
+        else {
+            System.out.println("Raise must be between 0-100%");
         }
     }
 
