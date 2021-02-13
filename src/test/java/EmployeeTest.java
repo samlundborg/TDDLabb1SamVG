@@ -64,7 +64,7 @@ public class EmployeeTest {
     @DisplayName("Test unique employee ID")
     void testUniqueEmployeeID() {
         testObjectSam = new Employee("Samuela", "Lundborg", 23, 65000);
-        assertFalse(testObjectSam.getID() == testObject.getID());
+        assertNotEquals(testObject.getID(), testObjectSam.getID());
     }
 
     @Test
@@ -87,6 +87,14 @@ public class EmployeeTest {
         testGetAge();
         testGetFirstName();
         testGetLastName();
+    }
+
+    @Test
+    @DisplayName("Test giving raise to Employee")
+    void testGiveRaise() {
+        double test = testObject.getSalary();
+        testObject.giveRaise(50); //Raise for 50%
+
     }
 
     @Test
