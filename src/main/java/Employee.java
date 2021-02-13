@@ -54,6 +54,13 @@ public class Employee {
         this.salary = salary;
     }
 
+    public void giveRaise(double percentRaise) {
+        if (percentRaise > 0 && percentRaise < 100) {
+            double x = percentRaise/100;
+            salary = salary * (1+x);
+        }
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
