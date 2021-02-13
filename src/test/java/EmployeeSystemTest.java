@@ -33,6 +33,12 @@ public class EmployeeSystemTest {
         assertNull(testObject.getEmployee(testPersonal.getID()));
     }
 
-
+    @Test
+    @DisplayName("Tests the method to give specific employee a raise")
+    void testGiveRaise() {
+        testObject.addEmployeeToList(testPersonal);
+        double test = testObject.getEmployee(1).getSalary();
+        testObject.giveRaiseToEmployee(1,50);
+    }
 
 }

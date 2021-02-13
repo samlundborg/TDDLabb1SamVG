@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class EmployeeSystem {
 
-    ArrayList<Employee> EmployeeList = new ArrayList<>();
+    private ArrayList<Employee> EmployeeList = new ArrayList<>();
 
     public void addEmployeeToList(Employee employee) {
         EmployeeList.add(employee);
@@ -24,4 +24,5 @@ public class EmployeeSystem {
             }
         }
     }
+
 }
