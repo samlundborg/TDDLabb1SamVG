@@ -5,7 +5,7 @@ public class Employee {
     private int age;
     private double salary;
     private static int employeeID;
-    private int employeeRealID;
+    private final int employeeRealID;
 
     public Employee(String firstName, String lastName, int age, double salary) {
         this.firstName = firstName;
@@ -53,7 +53,7 @@ public class Employee {
     }
 
     public void giveRaise(double percentRaise) {
-        if (percentRaise > 0 && percentRaise < 100) {
+        if (percentRaise > 0 && percentRaise <= 100) {
             double x = percentRaise/100;
             salary = salary * (1+x);
         }

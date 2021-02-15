@@ -9,27 +9,30 @@ public class EmployeeSystem {
     }
 
     public Employee getEmployee(int employeeID) {
-        for (int i = 0; i < EmployeeList.size(); i++) {
-            if (EmployeeList.get(i).getID() == employeeID) {
-                return EmployeeList.get(i);
+        for (Employee employee : EmployeeList) {
+            if (employee.getID() == employeeID) {
+                return employee;
             }
         }
         return null;
     }
 
     public void removeEmployeeFromList(int employeeID) {
-        for (int i = 0; i < EmployeeList.size(); i++) {
-            if (EmployeeList.get(i).getID() == employeeID) {
-                EmployeeList.remove(i);
+        EmployeeList.removeIf(employee -> employee.getID() == employeeID);
+    }
+
+    public void giveRaiseToEmployee(int employeeID, double percentRaise) {
+        for (Employee employee : EmployeeList) {
+            if (employee.getID() == employeeID) {
+                employee.giveRaise(percentRaise);
             }
         }
     }
 
-    public void giveRaiseToEmployee(int employeeID, int percentRaise) {
-        for (int i = 0; i < EmployeeList.size(); i++) {
-            if (EmployeeList.get(i).getID() == employeeID) {
-                EmployeeList.get(i).giveRaise(percentRaise);
-            }
+    public void giveRaiseToAllEmployees(double percentRaise) {
+        for (Employee employee : EmployeeList) {
+            employee.giveRaise(percentRaise);
         }
     }
+
 }
