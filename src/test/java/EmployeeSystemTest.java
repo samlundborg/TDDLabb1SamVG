@@ -67,13 +67,13 @@ public class EmployeeSystemTest {
                     () -> assertEquals(testSalary,testObject.getEmployee(testPersonal.getID()).getSalary()),
                     () -> assertEquals(testSalary,testObject.getEmployee(testPersonal2.getID()).getSalary()),
                     () -> assertEquals(55000, testObject.getEmployee(testPersonal3.getID()).getSalary())
-            );
+            ); // Checks so that the testSalary is equals
         } else {
             assertAll(
                     () -> assertNotEquals(testSalary,testObject.getEmployee(testPersonal.getID()).getSalary()),
                     () -> assertNotEquals(testSalary,testObject.getEmployee(testPersonal2.getID()).getSalary()),
                     () -> assertEquals(55000, testObject.getEmployee(testPersonal3.getID()).getSalary())
-            );
+            ); // Checks so that the testSalary is not equals
         }
     }
 
